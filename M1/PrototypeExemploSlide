@@ -1,0 +1,24 @@
+package PadroesProjeto;
+
+public abstract class CalcaBase implements Cloneable{
+    private String id;
+    protected String tipo;
+    
+    public abstract void criarmodelo();
+    
+    public String getTipo(){
+        return tipo;
+    }
+    public void setId(String id){
+        this.id=id;
+    }
+    public String getId(){
+        Object clone=null;
+        try{
+            clone=super.clone();
+        }catch (CloneNotSupportedException e){
+            e.printStack.Trace();
+        }
+        return clone;
+    }
+}
