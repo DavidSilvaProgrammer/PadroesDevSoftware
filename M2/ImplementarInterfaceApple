@@ -1,0 +1,20 @@
+package PadraoAdapter;
+
+public class Iphone implements ConectorApple{
+  private boolean conector;
+}
+  @override
+  public void useConectorApple(){
+    conector = true;
+    System.out.println("Carregador da Apple plugado!");
+  }
+  @override
+  public void recarrega(){
+    if(conector){
+      System.out.println("Começou a recarregar!");
+      System.out.println("Recarga finalizada!");
+  }else{
+    System.out.println("Conecte o carregador da Apple!")
+  }
+ }
+}
