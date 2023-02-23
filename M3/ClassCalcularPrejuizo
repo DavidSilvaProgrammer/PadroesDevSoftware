@@ -1,0 +1,18 @@
+package Strategy;
+
+public class CalcularPrejuizo implements Estrategia{
+    private final double prejuizo = 15;
+    @override
+    public double calcularLucro(double preco){
+        return preco - 15;
+    }
+}
+
+/*
+
+/*Aqui, temos a classe CalcularPrejuizo da estratégia de prejuízo, 
+que será utilizada para calcular o prejuízo obtido com o produto.
+Nela, implementamos a interface Estrategia com o seu método. 
+Vamos atribuir o valor 15 para o prejuízo e subtraí-lo 
+do valor do preço. Isso nos retorna o valor do preço do produto 
+menos o prejuízo.*/
