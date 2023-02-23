@@ -25,8 +25,5 @@ public class Produto{
     }
 }
 
-
-
-
 /*O método toString() irá retornar os dados que desejamos, com seu nome e o valor correspondente.
 Essas informações serão mostradas na tela ao executar a programação.*/
