@@ -1,0 +1,18 @@
+package PadroesProjeto;
+
+import java.util.Hashtable;
+
+public class CalcaModelos {
+    private static Hashtable<String, CalcaBase> calcamodelos = new Hashtable<String, CalcaBase>();
+    
+    public static CalcaBase getCalcaBase(String calcaBaseId){
+        CalcaBase cache = calcamodelos.get(calcaBaseid);
+        return (CalcaBase) cache.clone();
+    }
+    public static void carregarCache(){
+        calcaJeans.setId("Jeans");
+        calcamodelos.put(calcaJeans.getId(), calcaJeans();
+        calcaEstampada.setId("Estampada");
+        calcamodelos.put(calcaEstampada.getId,calcaEstampada);
+    }
+}
