@@ -24,4 +24,9 @@ public class UtilizarAdaptador{
     }
 }
 
-/*temos o método main(), que testa toda a funcionalidade do nosso código desenvolvido e cria os objetos Android e iPhone.*/
+/*temos o método main(), que testa toda a funcionalidade do nosso código desenvolvido e cria os objetos Android e iPhone.
+
+existe uma adaptação, onde um iPhone passa a ser recarregado com um carregador Android. Por isso, criamos um novo 
+AdaptadorConectores para fazer essa adaptação. Assim, o padrão Adapter passa a ser utilizado.
+
+*/
