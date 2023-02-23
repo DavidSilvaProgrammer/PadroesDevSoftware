@@ -1,0 +1,18 @@
+package PadraoAdapter;
+
+public class AdaptadorConectores implements ConectorAndroid{
+    private final ConectorApple conectorApple;
+    
+    public AdaptadorConectores(ConectorApple conectorApple){
+        this.conectorApple = conectorApple;
+    }
+    @override
+    public void useConectorAndroid(){
+        System.out.println("Carregador Android Conectado!");
+        conectorApple.useConectorApple();
+    }
+    @override
+    public void recarrega(){
+        conectorApple.recarrega();
+    }
+}
