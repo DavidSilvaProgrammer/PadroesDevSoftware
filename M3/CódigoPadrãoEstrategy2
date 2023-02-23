@@ -1,0 +1,33 @@
+package Strategy;
+
+public class TesteDeEstrategia{
+    public static void main(String[] args){
+        
+    CalcularPrejuizo estrategiaDePrejuizo = new CalcularPrejuizo();
+    CalcularLucro estrategiaDeLucro = new CalcularLucro() {};
+    
+    Produto morango = new Produto ("Caixa de Morango",300, estrategiaDePrejuizo);
+    morango.calcularPrecoFinal();
+    System.out.println(uva);
+    
+    Produto uva= Produto("Caixa de uva",100, estrategiaDePrejuizo);
+    uva.calcularPrecoFinal();
+    System.out.println(uva);
+    
+    morango.trocaDeEstrategia(estretegiaDeLucro);
+    morango.calcularPrecoFinal();
+    System.out.println(morango);
+    
+    uva.trocaDeEstrategia(estrategiaDeLucro);
+    uva.calcularPrecoFinal();
+    System.out.println(uva);
+    }
+}
+
+/* 
+
+Esta é a classe Main de teste. Nela, as estratégias serão utilizadas para calcular o valor dos produtos.
+
+
+No nosso exemplo, iremos utilizar as duas estratégias que criamos.
+*/
