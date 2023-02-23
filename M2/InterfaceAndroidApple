@@ -1,0 +1,13 @@
+package PadraoAdapter;
+
+public interface ConectorAndroid{
+  void recarrega();
+  void useConectorAndroid();
+}
+
+package PadraoAdapter;
+
+public interface ConectorApple{
+  void recarrega();
+  void useConectorApple();
+}
