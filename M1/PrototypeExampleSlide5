@@ -1,0 +1,16 @@
+package Principal;
+
+import PadroesProjeto.CalcaBase;
+import PadroesProjeto.CalcaModelos;
+
+public class Prototype{
+    public static void main(String[] args){
+        CalcaModelos.carregarCache();
+        
+        CalcaBase calcaClonada = (CalcaBase)CalcaModelos.getCalcaBase("Jeans");
+        System.out.println("Calça Clonada ->" + calcaClonada.getTipo());
+        
+        CalcaBase calcaClonada2 = (CalcaBase)CalcaModelos.getCalcaBase("Estampada");
+        System.out.println("Calça Clonada ->" + calcaClonada2.getTipo());
+    }
+}
