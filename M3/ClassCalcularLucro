@@ -1,0 +1,17 @@
+package Strategy;
+
+public class CalcularLucro implements Estrategia{
+    private final int lucro = 2;
+    @override
+    public double calcularLucro(double preco){
+        return preco * lucro;
+    }
+}
+
+/*
+Aqui, temos a classe CalcularLucro da estratégia de lucro, que é utilizada para calcular o lucro obtido no produto.
+
+Nela, implementamos a interface Estrategia com o seu método. Nesse método, multiplicamos o preço do produto 
+com base no lucro que queremos ter. No nosso exemplo, atribuímos o valor 2 para o lucro, o que nos retorna 100% 
+do preço, ou seja, o produto será vendido pelo dobro do preço que foi comprado.
+*/
