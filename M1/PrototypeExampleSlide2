@@ -1,0 +1,14 @@
+package PadroesProjeto;
+
+public class CalcaJeans extends CalcaBase{
+  public CalçaJeans(){
+    tipo = "Jeans Azul";
+    }
+    
+    @Override
+    public void criarmodelo(){
+    System.out.println("Calça jeans básica sendo produzida ...");
+    }
+
+
+}
