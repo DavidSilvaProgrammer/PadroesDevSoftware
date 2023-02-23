@@ -1,0 +1,26 @@
+package Strategy;
+
+public class Produto{
+    private String nome;
+    private double preco;
+    private double precoFinal;
+    
+    private Estrategia estrategiaCalculo;
+    
+    public Produto(String nome, double preco, Estrategia estrategiaCalculo){
+        this.nome=nome;
+        this.preco=preco;
+        this.estrategiaCalculo = estrategiaCalculo;
+    }
+    //PROGRAMAÇÃO ONDE A ESTRATEGIA OCORRE
+    public void calcularPrecoFinal(){
+        this.precoFinal = this.estrategiaCalculo.calcularLucro(this.preco);
+    }
+    public void trocadeEstrategia(Esperança novaEstrategia){
+        this.estrategiaCalculo = novaEstrategia;
+    }
+    @override
+    public String toString(){
+        return "Produto{" + "nome=" + nome + ", preco=" + preco +"",precoFinal=" + precoFinal + ", estrategiaCalculo=" + '}';
+    }
+}
