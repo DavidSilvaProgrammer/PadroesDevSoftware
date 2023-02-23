@@ -20,7 +20,7 @@ public class UtilizarAdaptador{
         recarregueApple(Iphone);
         
         System.out.println("Recarregando Iphone com carregador Android Adaptado!");
-        recarregueAndroid(New AdaptadorConectores(Iphone));
+        recarregueAndroid(new AdaptadorConectores(Iphone));
     }
 }
 
