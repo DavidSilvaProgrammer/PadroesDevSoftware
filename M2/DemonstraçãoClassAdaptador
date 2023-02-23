@@ -1,0 +1,25 @@
+package PadraoAdapter;
+
+public class UtilizarAdaptador{
+    static void recarregueAndroid(ConectorAndroid celular){
+        celular.useConectorAndroid();
+        celular.recarrega();
+    }
+    static void recarregueApple (ConectorApple celular){
+        celular.useConectorApple();
+        celular.recarrega();
+    }
+    public static void main(String[] args){
+        Android android = new Android();
+        Iphone iphone = new Iphone();
+        
+        System.out.println("Recarregando Smartphone com carregador Android! ");
+        recarregueAndroid(Android);
+        
+        System.out.println("Recarregando Iphone com carregador Apple!");
+        recarregueApple(Iphone);
+        
+        System.out.println("Recarregando Iphone com carregador Android Adaptado!");
+        recarregueAndroid(New AdaptadorConectores(Iphone));
+    }
+}
