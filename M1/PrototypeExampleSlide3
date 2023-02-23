@@ -1,0 +1,12 @@
+package PadroesProjeto;
+
+public class CalcaEstampada extends CalcaBase{
+    public CalcaEstampada(){
+        tipo="Jeans Estampada";
+    }
+    
+    @override
+    public void criarmodelo(){
+        system.out.println("Calça jeans estampada sendo produzida ...");
+    }
+}
