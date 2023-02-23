@@ -12,10 +12,11 @@ class Pessoa(Observador):
         self.acordada = True
         
 
-'''Em seguida, temos a criação de uma classe Pessoa, que importa elementos da classe abstrata Observador para depois implementá-los. Assim, o método atualizar será utilizado.
+'''Em seguida, temos a criação de uma classe Pessoa, que importa elementos da classe abstrata Observador para depois implementá-los. 
+Assim, o método atualizar será utilizado.
 
- 
+Na classe Pessoa, o estado é definido através do self.acordada = false. Nesse caso, a pessoa inicialmente estará dormindo, 
+pois o valor é falso para acordada.
 
-Na classe Pessoa, o estado é definido através do self.acordada = false. Nesse caso, a pessoa inicialmente estará dormindo, pois o valor é falso para acordada.
-
-Esse método verifica qual é o estado que a pessoa se encontra. Ou seja, irá verificar se a pessoa está acordada=True ou acordada=False, e irá retornar o resultado.'''
+Esse método verifica qual é o estado que a pessoa se encontra. Ou seja, irá verificar se a pessoa 
+está acordada=True ou acordada=False, e irá retornar o resultado.'''
