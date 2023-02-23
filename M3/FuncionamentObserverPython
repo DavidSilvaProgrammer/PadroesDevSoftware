@@ -19,4 +19,12 @@ Na classe Pessoa, o estado é definido através do self.acordada = false. Nesse 
 pois o valor é falso para acordada.
 
 Esse método verifica qual é o estado que a pessoa se encontra. Ou seja, irá verificar se a pessoa 
-está acordada=True ou acordada=False, e irá retornar o resultado.'''
+está acordada=True ou acordada=False, e irá retornar o resultado.
+
+
+
+O método atualizar foi herdado da interface e será implementado. Depois, ele atualizará o estado definido para acordada, 
+que anteriormente era false (falso) e agora é true (verdadeiro).
+
+
+'''
