@@ -23,3 +23,5 @@ public class UtilizarAdaptador{
         recarregueAndroid(New AdaptadorConectores(Iphone));
     }
 }
+
+/*temos o método main(), que testa toda a funcionalidade do nosso código desenvolvido e cria os objetos Android e iPhone.*/
