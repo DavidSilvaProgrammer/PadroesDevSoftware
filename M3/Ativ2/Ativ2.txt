@@ -8,3 +8,72 @@
 - receber as linhas de texto, que serão inseridas no objeto textEditor, do usuário até que ele envie o texto “EOF”, que não deve ser inserido no objeto textEditor;
 - por fim, o textEditor deve disparar o evento “save” para que o conteúdo seja salvo no arquivo configurado e imprimir todo o conteúdo do arquivo na tela.
 */
+
+
+from abc import ABC, abstractmethod
+
+class Editor(ABC):
+    def __init__(self):
+        self._observadores = []
+
+    def anexar(self, observador):
+        self._observadores.append(observador)
+
+    def desanexar(self, observador):
+        self._observadores.remove(observador)
+
+    def notificar(self):
+        for observador in self._observadores:
+            observador.atualizar(self)
+
+class TextEditor(Editor):
+    def __init__(self):
+        super().__init__()
+        self._linhas = []
+
+    def insertLine(self, lineNumber, text):
+        if lineNumber >= len(self._linhas):
+            self._linhas += [None] * (lineNumber - len(self._linhas) + 1)
+        self._linhas[lineNumber] = text
+        self.notificar()
+
+    def removeLine(self, lineNumber):
+        if lineNumber < len(self._linhas):
+            self._linhas.pop(lineNumber)
+            self.notificar()
+
+    def getLinhas(self):
+        return self._linhas
+
+class Observador(ABC):
+    @abstractmethod
+    def atualizar(self, editor):
+        pass
+
+class Visualizador(Observador):
+    def atualizar(self, editor):
+        linhas = editor.getLinhas()
+        print('\n'.join(linhas))
+
+class SalvarEmArquivo(Observador):
+    def atualizar(self, editor):
+        with open('arquivo.txt', 'w') as arquivo:
+            linhas = editor.getLinhas()
+            arquivo.write('\n'.join(linhas))
+
+if __name__ == '__main__':
+    textEditor = TextEditor()
+    visualizador = Visualizador()
+    salvarEmArquivo = SalvarEmArquivo()
+
+    textEditor.anexar(visualizador)
+    textEditor.anexar(salvarEmArquivo)
+
+    text = input()
+    lineNumber = 0
+    while text != 'EOF':
+        textEditor.insertLine(lineNumber, text)
+        lineNumber += 1
+        text = input()
+
+    textEditor.notificar()
