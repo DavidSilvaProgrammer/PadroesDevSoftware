@@ -10,3 +10,64 @@ utilizando o método clone dos objetos para preencher o array;
 onde cada elemento deve ser um clone dos elementos do array veículos;
 - no final, deve imprimir na tela o retorno da função represent de cada elemento desse novo array de clones de veículos.
 */
+
+import copy
+
+class Veiculo:
+    def __init__(self, modelo, marca, cor, numeroRodas):
+        self.modelo = modelo
+        self.marca = marca
+        self.cor = cor
+        self.numeroRodas = numeroRodas
+
+    def clone(self):
+        return copy.deepcopy(self)
+
+    def represent(self):
+        return f"Modelo: {self.modelo}, Marca: {self.marca}, Cor: {self.cor}, Número de Rodas: {self.numeroRodas}"
+
+
+class Carro(Veiculo):
+    def __init__(self, modelo, marca, cor, numeroRodas, numeroPortas):
+        super().__init__(modelo, marca, cor, numeroRodas)
+        self.numeroPortas = numeroPortas
+
+    def clone(self):
+        return copy.deepcopy(self)
+
+    def represent(self):
+        return f"Modelo: {self.modelo}, Marca: {self.marca}, Cor: {self.cor}, Número de Rodas: {self.numeroRodas}, Número de Portas: {self.numeroPortas}"
+
+
+class Moto(Veiculo):
+    def __init__(self, modelo, marca, cor, numeroRodas, partidaEletrica):
+        super().__init__(modelo, marca, cor, numeroRodas)
+        self.partidaEletrica = partidaEletrica
+
+    def clone(self):
+        return copy.deepcopy(self)
+
+    def represent(self):
+        return f"Modelo: {self.modelo}, Marca: {self.marca}, Cor: {self.cor}, Número de Rodas: {self.numeroRodas}, Partida Elétrica: {self.partidaEletrica}"
+
+
+class Aplicacao:
+    def __init__(self):
+        carro1 = Carro("Gol", "Volkswagen", "Azul", 4, 4)
+        carro2 = Carro("Corolla", "Toyota", "Preto", 4, 4)
+        moto1 = Moto("CG 160", "Honda", "Vermelho", 2, True)
+        moto2 = Moto("MT-03", "Yamaha", "Branco", 2, False)
+        self.veiculos = [carro1, carro2, moto1, moto2, carro1.clone(), moto2.clone()]
+
+    def clone_veiculos(self):
+        return [veiculo.clone() for veiculo in self.veiculos]
+
+    def represent_veiculos(self, veiculos):
+        for veiculo in veiculos:
+            print(veiculo.represent())
+
+
+if __name__ == "__main__":
+    app = Aplicacao()
+    veiculos_clone = app.clone_veiculos()
+    app.represent_veiculos(veiculos_clone)
