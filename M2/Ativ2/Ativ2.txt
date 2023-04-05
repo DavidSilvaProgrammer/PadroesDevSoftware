@@ -5,3 +5,54 @@ demonstrar o uso da classe AdaptadorPato.
 
 Trabalhe esse código em seu IDE, suba ele para sua conta no GitHub e compartilhe o link desse projeto 
 no campo ao lado para que outros desenvolvedores possam analisá-lo.
+
+# Classe Pato
+class Pato:
+    def grasnar(self):
+        print("Pato: Quack, quack!")
+    
+    def voar(self):
+        print("Pato: Voando...")
+    
+# Classe Galinha
+class Galinha:
+    def cacarejar(self):
+        print("Galinha: Cucurucu!")
+    
+    def voar(self):
+        print("Galinha: Não posso voar!")
+    
+# Classe AdaptadorPato que adapta o Pato para ser usado como uma Galinha
+class AdaptadorPato(Galinha):
+    def __init__(self, pato):
+        self.pato = pato
+    
+    def cacarejar(self):
+        self.pato.grasnar()
+    
+    def voar(self):
+        self.pato.voar()
+        
+# Classe AdaptadorPatoDemo para demonstrar o uso da classe AdaptadorPato
+class AdaptadorPatoDemo:
+    def testar_adaptador(self):
+        pato = Pato()
+        pato.adaptado_para_galinha = AdaptadorPato(pato)
+        
+        print("O pato diz...")
+        pato.grasnar()
+        pato.voar()
+        
+        print("\nA galinha diz...")
+        galinha = Galinha()
+        galinha.cacarejar()
+        galinha.voar()
+        
+        print("\nO pato adaptado para galinha diz...")
+        pato.adaptado_para_galinha.cacarejar()
+        pato.adaptado_para_galinha.voar()
+
+# Testando o AdaptadorPatoDemo
+demo = AdaptadorPatoDemo()
+demo.testar_adaptador()
+
