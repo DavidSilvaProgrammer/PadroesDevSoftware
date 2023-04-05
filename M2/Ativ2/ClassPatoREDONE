@@ -1,0 +1,47 @@
+class Pato:
+    def grasnar(self):
+        pass
+
+    def voar(self):
+        pass
+
+
+class PatoSelvagem(Pato):
+    def grasnar(self):
+        print("Pato selvagem está grasnando!")
+
+    def voar(self):
+        print("Pato selvagem está voando!")
+
+
+class Galinha:
+    def cacarejar(self):
+        pass
+
+    def voar_muito_baixo(self):
+        pass
+
+
+class AdaptadorPato(Galinha):
+    def __init__(self, pato):
+        self.pato = pato
+
+    def cacarejar(self):
+        self.pato.grasnar()
+
+    def voar_muito_baixo(self):
+        self.pato.voar()
+
+
+# Exemplo de uso
+if __name__ == '__main__':
+    pato_selvagem = PatoSelvagem()
+    adaptador_pato = AdaptadorPato(pato_selvagem)
+
+    print("O pato diz...")
+    pato_selvagem.grasnar()
+    pato_selvagem.voar()
+
+    print("\nA galinha diz...")
+    adaptador_pato.cacarejar()
+    adaptador_pato.voar_muito_baixo()
