@@ -8,3 +8,55 @@ O projeto deve seguir os seguintes critérios:
 
 Trabalhe esse código em seu IDE, suba ele para sua conta no GitHub e compartilhe 
 o link desse projeto no campo ao lado para que outros desenvolvedores possam analisá-lo. */
+
+class Sanduiche:
+    def getDescricao(self):
+        pass
+
+    def getCusto(self):
+        pass
+
+
+class SanduicheDeFrangoAssado(Sanduiche):
+    def getDescricao(self):
+        return "Sanduíche de Frango Assado"
+
+    def getCusto(self):
+        return 4.50
+
+
+class IngredienteAdicional(Sanduiche):
+    def __init__(self, sanduiche):
+        self.sanduiche = sanduiche
+
+    def getDescricao(self):
+        pass
+
+    def getCusto(self):
+        pass
+
+
+class Pepperoni(IngredienteAdicional):
+    def getDescricao(self):
+        return self.sanduiche.getDescricao() + ", Pepperoni"
+
+    def getCusto(self):
+        return self.sanduiche.getCusto() + 0.99
+
+
+class QueijoMussarelaRalado(IngredienteAdicional):
+    def getDescricao(self):
+        return self.sanduiche.getDescricao() + ", Queijo Mussarela Ralado"
+
+    def getCusto(self):
+        return self.sanduiche.getCusto() + 2.00
+
+
+# Exemplo de uso
+if __name__ == '__main__':
+    sanduiche = SanduicheDeFrangoAssado()
+    sanduiche = Pepperoni(sanduiche)
+    sanduiche = QueijoMussarelaRalado(sanduiche)
+
+    print(f"{sanduiche.getDescricao()} custa ${sanduiche.getCusto():.2f}.")
+
