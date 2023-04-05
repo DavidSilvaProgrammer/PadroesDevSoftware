@@ -1,0 +1,25 @@
+class AdaptadorPatoDemo:
+    def __init__(self):
+        self.pato_selvagem = PatoSelvagem()
+        self.adaptador_pato = AdaptadorPato(self.pato_selvagem)
+
+    def testar_galinha(self):
+        print("A galinha diz...")
+        self.adaptador_pato.cacarejar()
+        self.adaptador_pato.voar_muito_baixo()
+
+    def testar_pato(self):
+        print("O pato diz...")
+        self.pato_selvagem.grasnar()
+        self.pato_selvagem.voar()
+
+
+# Exemplo de uso
+if __name__ == '__main__':
+    adaptador_pato_demo = AdaptadorPatoDemo()
+
+    print("Testando o pato:")
+    adaptador_pato_demo.testar_pato()
+
+    print("\nTestando a galinha:")
+    adaptador_pato_demo.testar_galinha()
