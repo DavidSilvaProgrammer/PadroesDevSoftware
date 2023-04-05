@@ -9,3 +9,64 @@ para realizar as operações de Soma, Subtração e Multiplicação de números 
 Trabalhe esse código em seu IDE, suba ele para sua conta no GitHub e compartilhe o link desse projeto no campo ao lado para que outros 
 desenvolvedores possam analisá-lo.
 */
+
+import java.util.Scanner;
+
+interface Strategy {
+    int execute(int num1, int num2);
+}
+
+class Soma implements Strategy {
+    public int execute(int num1, int num2) {
+        return num1 + num2;
+    }
+}
+
+class Subtracao implements Strategy {
+    public int execute(int num1, int num2) {
+        return num1 - num2;
+    }
+}
+
+class Multiplicacao implements Strategy {
+    public int execute(int num1, int num2) {
+        return num1 * num2;
+    }
+}
+
+public class Calculadora {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o primeiro valor: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Digite o segundo valor: ");
+        int num2 = scanner.nextInt();
+
+        System.out.print("Digite a operação (soma/subtração/multiplicação): ");
+        String operacao = scanner.next();
+
+        Strategy strategy;
+        switch (operacao) {
+            case "soma":
+                strategy = new Soma();
+                break;
+            case "subtração":
+                strategy = new Subtracao();
+                break;
+            case "multiplicação":
+                strategy = new Multiplicacao();
+                break;
+            default:
+                System.out.println("Operação inválida.");
+                return;
+        }
+
+        int resultado = strategy.execute(num1, num2);
+        System.out.println("O resultado da " + operacao + " é: " + resultado);
+    }
+}
+
+
+
